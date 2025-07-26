@@ -1,0 +1,41 @@
+[package]
+name = "panorama"
+version = "0.1.0"
+edition = "2021"
+exclude = ["chroot"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+addr2line = "0.21.0"
+aligned-vec = "0.5.0"
+arbitrary = "1.3.2"
+basic_mutator = { git = "https://github.com/00xc/basic_mutator", version = "0.1.0" }
+bitflags = "2.4.1"
+event-manager = { version = "0.4.1", features = ["remote_endpoint"] }
+gimli = "0.28.0"
+kvm-bindings = { version = "0.13.0", features = ["fam-wrappers"] }
+kvm-ioctls = "0.23.0"
+lapic = { git = "https://github.com/00xc/lapic.git", version = "0.1.1" }
+libc = "0.2.149"
+linux-loader = { git = "https://github.com/rust-vmm/linux-loader.git", version = "0.13.0" }
+memmap2 = "0.9.0"
+# nftables-json = { version = "0.3.0", path = "../nftables-json" }
+nix = { version = "0.27.1", features = ["time", "signal"] }
+object = "0.32.1"
+once_cell = "1.18.0"
+rand = { version = "0.8.5", features = ["small_rng"] }
+range-set = "0.0.10"
+serde_json = { version = "1.0.108", features = ["std"] }
+virtio-bindings = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.2.2" }
+virtio-blk = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.1.0", features = ["backend-stdio"] }
+virtio-device = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.1.0" }
+virtio-queue = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.16.0" }
+vm-allocator = "0.1.0"
+vm-device = "0.1.0"
+vm-memory = { version = "0.16.2", features = ["backend-mmap", "backend-bitmap"] }
+vmm-sys-util = "0.14.0"
+vm-superio = "0.7.0"
+
+[dev-dependencies]
+memfd = "0.6.4"
