@@ -27,15 +27,15 @@ once_cell = "1.18.0"
 rand = { version = "0.8.5", features = ["small_rng"] }
 range-set = "0.0.10"
 serde_json = { version = "1.0.108", features = ["std"] }
-virtio-bindings = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.2.2" }
-virtio-blk = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.1.0", features = ["backend-stdio"] }
-virtio-device = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.1.0" }
-virtio-queue = { git = "https://github.com/rust-vmm/vm-virtio.git", version = "0.16.0" }
 vm-allocator = "0.1.0"
 vm-device = "0.1.0"
-vm-memory = { version = "0.16.2", features = ["backend-mmap", "backend-bitmap"] }
 vmm-sys-util = "0.14.0"
 vm-superio = "0.7.0"
+vm-memory = { version = "0.16.0", features = ["backend-mmap", "backend-bitmap"] }
+virtio-bindings = { git = "https://github.com/rust-vmm/vm-virtio.git", tag = "virtio-queue-v0.16.0", version = "0.2.6" }
+virtio-blk = { git = "https://github.com/rust-vmm/vm-virtio.git", tag = "virtio-queue-v0.16.0", version = "0.1.0", features = ["backend-stdio"] }
+virtio-device = { git = "https://github.com/rust-vmm/vm-virtio.git", tag = "virtio-queue-v0.16.0", version = "0.1.0" }
+virtio-queue = { git = "https://github.com/rust-vmm/vm-virtio.git", tag = "virtio-queue-v0.16.0", version = "0.16.0" }
 
 [dev-dependencies]
 memfd = "0.6.4"
