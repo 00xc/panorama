@@ -155,7 +155,7 @@ impl NftFuzzer {
 				new = true;
 				let loc = syms.location(addr);
 				if loc.file.is_some() {
-					println!("NEW: {addr:x} {loc}");	
+					println!("NEW: {addr:x} {loc}");
 				}
 			}
 		}
@@ -321,15 +321,13 @@ impl Fuzzer {
 	pub fn save_last(&self) {
 		let hash = self.hash_inp(&self.mutator.input);
 		let f = format!("corpus/{:x}.fuzz", hash);
-		std::fs::write(
-			f,
-			&self.mutator.input,
-		)
-		.unwrap();
+		std::fs::write(f, &self.mutator.input).unwrap();
 	}
 
 	pub fn save_all(&mut self) {
-		for (i, corp) in self.corpus.0.iter().enumerate().skip(self.saved) {
+		for (i, corp) in
+			self.corpus.0.iter().enumerate().skip(self.saved)
+		{
 			let hash = self.hash_inp(corp);
 			let f = format!("corpus/{:x}.fuzz", hash);
 			let _ = std::fs::write(f, corp);
